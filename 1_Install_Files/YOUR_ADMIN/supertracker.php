@@ -65,15 +65,6 @@ define ('SUPERTRACKER_USE_PPC', false);
   }
   // -->
 </script>
-<style>
-/* data table */
-.dataTableHeadingRow { background-color: #C9C9C9; }
-.dataTableHeadingContent { font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #000000; font-weight: bold; }
-.dataTableRow { background-color: #F0F1F1; }
-.dataTableRowSelected { background-color: #DEE4E8; }
-.dataTableRowOver { background-color: #FFFFFF; cursor: pointer; cursor: hand; }
-.dataTableContent { font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #000000; }
-</style>
 </head>
 <body onload="init()">
 <!-- header //-->
