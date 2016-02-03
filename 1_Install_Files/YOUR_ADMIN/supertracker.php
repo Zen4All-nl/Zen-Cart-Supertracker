@@ -79,6 +79,7 @@ define ('SUPERTRACKER_USE_PPC', false);
     <table border="0" width="100%" cellspacing="0" cellpadding="0">
       <tr>
         <td>
+                <div class="pageHeading"><?php echo HEADING_TITLE; ?></div>
             <div class="supertracker_contact">
             <strong><?php echo TEXT_DATABASE_INFO; ?></strong>
 <?php
