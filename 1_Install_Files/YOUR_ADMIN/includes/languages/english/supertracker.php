@@ -14,6 +14,9 @@
 define('HEADING_TITLE', 'Supertracker');
 
 define('TABLE_TEXT_PROD_COVERAGE', 'Supertracker');
+define('TEXT_BROWSER', 'Browser Report');
+define('TEXT_VISITORS_STATE', 'Visitors State of Origin');
+define('TEXT_VISITORS_CITY', 'Visitors City of Origin');
 define('TEXT_SHOW_ALL', 'Show All');
 define('TEXT_BAILED_CARTS', 'Bailed Carts');
 define('TEXT_SUCCESSFUL_CHECKOUTS', 'Successful Checkouts');
@@ -72,6 +75,9 @@ define('TEXT_NUMBER_OF_CLICKS', 'Number of Clicks');
 define('TEXT_AVERAGE_TIME_ON_SITE_BY', 'Average Time Spent on Site by Referrer Report');
 define('TEXT_AVERAGE_LENGTH_OF_TIME', 'Average Length of Time Spent on site (minutes)');
 
+define('TABLE_TEXT_COUNTRY', 'Country');
+define('TABLE_TEXT_REGION', 'Region: ');
+define('TABLE_TEXT_CITY', 'City: ');
 define('TABLE_TEXT_IP', 'Customer IP Address/Country: ');
 define('TABLE_TEXT_NAME', 'Customer Name: ');
 define('TABLE_TEXT_REFFERED_BY', 'Referred By: ');

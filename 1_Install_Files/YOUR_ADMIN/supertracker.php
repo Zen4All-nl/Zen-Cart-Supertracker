@@ -100,6 +100,8 @@ if ($action == 'del_rows') {
                     array('id' => "refer", 'text' => TEXT_TOP_REFERRERS),
                     array('id' => "success_refer", 'text' => TEXT_TOP_SALES),
                     array('id' => "geo", 'text' => TEXT_VISITORS),
+                    array('id' => "state", 'text' => TEXT_VISITORS_STATE),
+                    array('id' => "city", 'text' => TEXT_VISITORS_CITY),
                     array('id' => "keywords", 'text' => TEXT_SEARCH_KEYWORDS),
                     array('id' => "keywords_last24", 'text' => TEXT_SEARCH_KEYWORDS_24),
                     array('id' => "keywords_last72", 'text' => TEXT_SEARCH_KEYWORDS_3),
@@ -506,6 +508,11 @@ if ($action == 'del_rows') {
 
               <?php
               while (!$lt_row->EOF) {
+                $customer_ip = $lt_row->fields['ip_address'];
+                $country_code = $lt_row->fields['country_code'];
+                $country_name = $lt_row->fields['country_name'];
+                $region_name = $lt_row->fields['country_region'];
+                $city_name = $lt_row->fields['country_city'];
                 if ($lt_row->fields['customer_id'] > 0) {
                   $cust_row = $db->Execute("SELECT customers_firstname, customers_lastname, customers_email_address
                                     FROM " . TABLE_CUSTOMERS . "
@@ -522,6 +529,7 @@ if ($action == 'del_rows') {
 
                 echo '<table width="100%" border=0 cellspacing=0 cellpadding=1 style="border:1px solid #000;">';
                 echo '<tr><td class="dataTableContent"><b>' . TABLE_TEXT_IP . '</b> <a href="http://whatismyipaddress.com/ip/' . $lt_row->fields['ip_address'] . '" target="_blank">' . $lt_row->fields['ip_address'] . '</a>' . ' (' . gethostbyaddr($lt_row->fields['ip_address']) . ') ' . zen_image(DIR_WS_IMAGES . 'flags/' . $lt_row->fields['country_code'] . '.gif') . ' ' . $lt_row->fields['countries_name'] . '</td></tr>';
+                echo '<tr><td class="dataTableContent"><b>' . TABLE_TEXT_REGION . '</b>' . $region_name . '<b>    ' . TABLE_TEXT_CITY . '</b>' . $city_name . '</td></tr>';
                 echo '<tr><td class="dataTableContent"><b>' . TABLE_TEXT_CUSTOMER_BROWSER_IDENT . '</b> ' . $lt_row->fields['browser_string'] . '</td></tr>';
                 echo '<tr><td class="dataTableContent"><b>' . TABLE_TEXT_NAME . '</b> ' . $customer_name . '</td></tr>';
                 echo '<tr><td class="dataTableContent"><b>' . TABLE_TEXT_REFFERED_BY . '</b> ' . $referrer . '</td></tr>';
@@ -649,8 +657,78 @@ if ($action == 'del_rows') {
               echo '</table>';
             }//End PPC Summary Report
 
-}
-?>
+            if ($_GET['report'] == 'geo') {
+              ?>
+          <tr>
+            <td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                <?php
+                echo '<tr class="dataTableHeadingRow"><td class="dataTableHeadingContent">' . TABLE_TEXT_COUNTRY . '</td></tr>';
+                $geo_query = "select count(*) as count, country_code, country_name from supertracker GROUP by country_code";
+                $geo_result = $db->Execute($geo_query);
+                $geo_hits = array();
+                $country_names = array();
+                $total_hits = 0;
+                while (!$geo_result->EOF) {
+                  $total_hits += $geo_result->fields['count'];
+                  $country_code = strtolower($geo_result->fields['country_code']);
+                  $geo_hits[$country_code] = $geo_result->fields['count'];
+                  $country_names[$country_code] = zen_image(DIR_WS_IMAGES . 'flags/' . $country_code . '.gif') . ' ' . $geo_result->fields['country_name'];
+                  $geo_result->MoveNext();
+                }
+                draw_geo_graph($geo_hits, $country_names, $total_hits);
+                echo $contents['text'];
+              }//End Geo Report
+
+              if ($_GET['report'] == 'state') {
+                ?>
+                <tr>
+                  <td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <?php
+                      echo '<tr class="dataTableHeadingRow"><td class="dataTableHeadingContent">' . TABLE_TEXT_COUNTRY . '</td></tr>';
+                      $state_query = "SELECT count(*) AS count, country_region
+                                      FROM " . TABLE_SUPERTRACKER . "
+                                      GROUP by country_region";
+                      $state = $db->Execute($state_query);
+                      $total_hits = 0;
+                      while (!$state->EOF) {
+                        $total_hits += $state->fields['count'];
+                        $country_code = strtolower($state->fields['country_region']);
+                        $state_hits[$country_code] = $state->fields['count'];
+                        $country_names[$country_code] = $state->fields['country_region'];
+                        $state->MoveNext();
+                      }
+                      $draw_geo_graph = draw_geo_graph($state_hits, $country_names, $total_hits);
+                      for ($i = 0, $n = sizeof($draw_geo_graph); $i < $n; $i++) {
+                        echo $draw_geo_graph[$i]['text'];
+                      }
+                    }//End Geo Report
+
+                    if ($_GET['report'] == 'city') {
+                      ?>
+                      <tr>
+                        <td valign="top">
+                          <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                            <?php
+                            echo '<tr class="dataTableHeadingRow"><td class="dataTableHeadingContent">' . TABLE_TEXT_COUNTRY . '</td></tr>';
+                            $city_query = "SELECT count(*) AS count, country_city
+                                           FROM " . TABLE_SUPERTRACKER . "
+                                           GROUP by country_city";
+                            $city = $db->Execute($city_query);
+                            $total_hits = 0;
+                            while (!$city->EOF) {
+                              $total_hits += $city->fields['count'];
+                              $country_code = strtolower($city->fields['country_city']);
+                              $city_hits[$country_code] = $city->fields['count'];
+                              $country_names[$country_code] = $city->fields['country_city'];
+                              $city->MoveNext();
+                            }
+                            $draw_geo_graph = draw_geo_graph($city_hits, $country_names, $total_hits);
+                            for ($i = 0, $n = sizeof($draw_geo_graph); $i < $n; $i++) {
+                              echo $draw_geo_graph[$i]['text'];
+                            }
+                          }//End Geo Report
+                        }
+                        ?>
 
                     </td>
                     <!-- body_text_eof //-->

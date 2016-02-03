@@ -22,7 +22,7 @@ $db->Execute("INSERT INTO " . TABLE_CONFIGURATION . " (configuration_title, conf
   ('Excluding bot\'s', 'XTRACKING_EXCLUDE_BOTS', 'true', 'IP\'s Excluding from logging', " . $configuration_group_id . ", 3, NOW(), NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),');");
 
 
-$db->Execute("CREATE TABLE IF NOT EXISTS " . DB_PREFIX . "supertracker (
+$db->Execute("CREATE TABLE IF NOT EXISTS " . TABLE_SUPERTRACKER . " (
   tracking_id bigint(32) NOT NULL AUTO_INCREMENT,
   ip_address varchar(15) NOT NULL DEFAULT '',
   browser_string varchar(255) NOT NULL DEFAULT '',
