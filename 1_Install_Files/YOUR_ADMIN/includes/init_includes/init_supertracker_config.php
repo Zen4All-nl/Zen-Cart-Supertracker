@@ -5,11 +5,19 @@
   $zc150 = (PROJECT_VERSION_MAJOR > 1 || (PROJECT_VERSION_MAJOR == 1 && substr(PROJECT_VERSION_MINOR, 0, 3) >= 5));
   // add upgrade script
   if (defined('SUPERTRACKER_MODULE_VERSION')) { // does not exist prior to v1.1
-    $gm_version = SUPERTRACKER_MODULE_VERSION;
-    while ($st_version != '1.1') {
+    $st_version = SUPERTRACKER_MODULE_VERSION;
+    while ($st_version != '1.2') {
       switch($st_version) {
+        case '1.1':
+          // perform upgrade
+          if (file_exists(DIR_WS_INCLUDES . 'installers/supertracker/1_2.php')) {
+            include_once(DIR_WS_INCLUDES . 'installers/supertracker/1_2.php');
+            $messageStack->add('Updated Supertracker to v1.2', 'success');
+            $cc_version = '1.2';
+          }
+          break;
         default:
-          $st_version = '1.1';
+          $st_version = '1.2';
           // break all the loops
           break 2;      
       }
