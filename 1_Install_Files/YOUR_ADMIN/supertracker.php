@@ -402,7 +402,7 @@ if ($action == 'del_rows') {
                                   foreach ($row_data as $r) {
                                     if (strlen($tracker[$r]) > $max_len)
                                       $tracker[$r] = substr($tracker[$r], 0, ($max_len - 3)) . '...';
-                                    echo '<td class="dataTableContent"' . $style_override . '>' . $tracker[$r] . '</td>';
+                                    echo '<td class="dataTableContent">' . $tracker[$r] . '</td>';
                                   }
                                   ?>
                                 </tr>
@@ -422,7 +422,7 @@ if ($action == 'del_rows') {
                                   foreach ($row_data as $r) {
                                     if (strlen($tracker_query->fields[$r]) > $max_len)
                                       $tracker_query->fields[$r] = substr($tracker_query->fields[$r], 0, ($max_len - 3)) . '...';
-                                    echo '<td class="dataTableContent"' . $style_override . '>' . $tracker_query->fields[$r] . '</td>';
+                                    echo '<td class="dataTableContent">' . $tracker_query->fields[$r] . '</td>';
                                   }
                                   ?>
                                 </tr>
