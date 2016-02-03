@@ -96,7 +96,7 @@ if ($action == 'del_rows') {
                 <div class="supertracker_text">
                   <?php
                   $report_array = array(
-                    array('id' => "", 'text' => TABLE_TEXT_MENU_TEXTE),
+                    array('id' => "", 'text' => TABLE_TEXT_MENU_TEXT),
                     array('id' => "refer", 'text' => TEXT_TOP_REFERRERS),
                     array('id' => "success_refer", 'text' => TEXT_TOP_SALES),
                     array('id' => "geo", 'text' => TEXT_VISITORS),
@@ -120,7 +120,7 @@ if ($action == 'del_rows') {
 
                   $_GET['report'] = zen_db_input($_GET['report']);
 
-                  echo zen_draw_form('report_selector', FILENAME_SUPERTRACKER, '', 'get') . zen_hide_session_id() . TABLE_TEXT_MENU_DESC_TEXTE . ' ' . zen_draw_pull_down_menu('report', $report_array, zen_db_input($_GET['report']), 'onChange="this.form.submit();"');
+                  echo zen_draw_form('report_selector', FILENAME_SUPERTRACKER, '', 'get') . zen_hide_session_id() . TABLE_TEXT_MENU_DESC_TEXT . ' ' . zen_draw_pull_down_menu('report', $report_array, zen_db_input($_GET['report']), 'onChange="this.form.submit();"');
                   ?>
                   <noscript><input type="submit" value="GO"></noscript>
                   </form>

@@ -95,8 +95,8 @@ define('TABLE_TEXT_KEY_PHRASE_24', 'Keywords used during the last 24hrs');
 define('TABLE_TEXT_KEY_PHRASE_3', 'Keywords used during the last 3 days');
 define('TABLE_TEXT_KEY_PHRASE_7', 'Keywords used during the last 7 days');
 define('TABLE_TEXT_KEY_PHRASE_30', 'Keywords used during the last 30 days');
-define('TABLE_TEXT_MENU_DESC_TEXTE', 'Please select a report to view:&nbsp;');
-define('TABLE_TEXT_MENU_TEXTE', 'Click Here!');
+define('TABLE_TEXT_MENU_DESC_TEXT', 'Please select a report to view:&nbsp;');
+define('TABLE_TEXT_MENU_TEXT', 'Click Here!');
 define('TEXT_STRING_FILTER', 'Enter a string to filter on referrer (e.g. "google", "msn", etc)');
 define('TEXT_PRODUCTS_VIEWED_REPORT', 'Products Viewed Report');
   
