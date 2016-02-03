@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Super tracker records statistics for each user arriving at your shop and allows you to generate various reports based on this data." />
+<title>Super Tracker 1.1 for Zen Cart v1.3.x and 1.5</title>
+<link rel="stylesheet" type="text/css" href="includes/css/stylesheet.css" />
+<script type="text/javascript" src="includes/jscript/jscript_tabs.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+<h2>Super Tracker version 1.1</h2>
+<div id="slidetabsmenu" style="display: none;">
+<ul>
+  <li> <a onclick="expandcontent('sc1', this)" href="javascript:void(0)"><span>Purpose &amp; Aim</span></a></li>
+  <li> <a onclick="expandcontent('sc2', this)" href="javascript:void(0)"><span>Installation</span></a></li>
+  <li> <a onclick="expandcontent('sc3', this)" href="javascript:void(0)"><span>Configuration</span></a></li>
+  <li> <a onclick="expandcontent('sc4', this)" href="javascript:void(0)"><span>Usage</span></a></li>
+  <li> <a onclick="expandcontent('sc5', this)" href="javascript:void(0)"><span>Credits &amp; History</span></a></li>
+  <li> <a onclick="expandcontent('sc6', this)" href="javascript:void(0)"><span>Troubleshooting</span></a></li>
+  <li> <a onclick="expandcontent('sc7', this)" href="javascript:void(0)"><span>Files</span></a></li>
+  <li> <a onclick="expandcontent('sc8', this)" href="javascript:void(0)"><span>Misc</span></a></li>
+  <li> <a onclick="expandcontent('sc9', this)" href="javascript:void(0)"><span>License</span></a></li>
+</ul>
+</div>
+<br style="clear: both;" />
+<!--Begin tabcontainer-->
+<div id="tabcontentcontainer">
+
+<!--Begin sc1-->
+<div class="tabcontent" id="sc1" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+<h3>Purpose &amp; Aim</h3>
+<p>Super Tracker records statistics for each user arriving at your shop and allows you to generate various reports based on this data.</p>
+<h4>Super Tracker records the following data:</h4>
+<ul>
+  <li>Referring page</li>
+  <li>Referring query allows access to keywords used in search engine)</li>
+  <li>Landing page (including query string - important for Pay Per Click campaign assessment)</li>
+  <li>Arrival time / exit time /exit page</li>
+  <li>IP address</li>
+  <li>Country code / country name</li>
+  <li>Customer's cart contents</li>
+  <li>Number of clicks on shop (accuracy is not 100% as this is recorded based on session ID)</li>
+  <li>Categories Viewed</li>
+  <li>Products viewed</li>
+  <li>Customer ID (if signed in)</li>
+  <li>Order ID (if order was placed)</li>
+  <li>Were products added to cart (true/false)</li>
+  <li>Did the customer Checkout (true/false)</li>
+</ul>
+<p>Super Tracker then uses this data to generate many interesting reports about customer activity on your site, without the need of a 3rd party service. Helps merchants answer questions like:</p>
+<ul>
+  <li>How do my customers find my site?</li>
+  <li>Which referring sites generate the most sales?</li>
+  <li>Are there any trends which may help identify why customers are leaving without completing their purchase?</li>
+  <li>Am I getting enough visitors from the countries I am targeting?</li>
+  <li>Is my Pay Per Click Campaign delivering pay customers, rather than just expensive hits?</li>
+</ul>
+<h4>Reports Generated:</h4>
+<ul>
+  <li>Top Referrers</li>
+  <li>Top Sales Generating Referrers</li>
+  <li>Visiting Countries Stats</li>
+  <li>Search Keywords Used - Totals</li>
+  <li>Search Keywords Used in Last 24 Hours</li>
+  <li>Search Keywords Used in Last 3 Days</li>
+  <li>Search Keywords Used in Last Week</li>
+  <li>Search Keywords Used in Last Month</li>
+  <li>Top Exit Pages (No Sale)</li>
+  <li>Top Exit Pages (No Sale, but added to cart)</li>
+  <li>Average Clicks on Site by Referrer</li>
+  <li>Average Time Spent on Site by Referrer</li>
+  <li>Products Viewed Report</li>
+  <li>Last Ten Visitors</li>
+</ul>  
+<p>The support thread can be found <a href="http://www.zen-cart.com/forum/showthread.php?t=65040" target="new">here</a>.</p>
+
+<p><strong>!!READ EVERYTHING!!</strong></p>
+
+<p>After following the installation instructions, it is very strongly recommended that you read through the ENTIRE &quot;<strong>Configuration</strong>&quot; &amp; &quot;<strong>Usage</strong>&quot; sections of this readme. There you will find out exactly what <strong>Super Tracker</strong> can do.</p>
+
+<p>Ready to get started? Just follow the installation instructions.</p>
+
+</div>
+</div>
+</div>
+<!--End sc1-->
+
+<!--Begin sc2-->
+<div class="tabcontent" id="sc2" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+<h3>Installation</h3>
+<h4>!!!!!BACKUP YOUR FILES AND DATABASE BEFORE YOU BEGIN!!!!!</h4>
+<p>BEFORE INSTALLING, you are strongly encouraged to READ ALL OF THE TABS in this readme file. Then follow the installation or upgrade instructions, as appropriate.  </p>
+<p><strong>BEFORE YOU POST A QUESTION ON THE FORUM</strong> - read through this readme again as needed</p>
+<p>There are two folders in the fileset</p>
+
+<ul>
+  <li>1_Install_Files</li>
+  <li>3_files_for_zen_cart_1.3.x</li>
+</ul>
+<fieldset>
+<legend>New Installation Instructions</legend>
+<ol>
+  <li>BACK UP your database &amp; store.</li>
+  <li>Unzip the Super Tracker package to your local hard drive, retaining the folder structure.</li>
+  <li>Rename the &quot;YOUR_ADMIN_FOLDER&quot; folder in the &quot;1_Install_Files&quot;
+    <ul>
+      <li>1_Install_Files/YOUR_ADMIN/</li>
+    </ul></li>
+  <li>Rename all of the &quot;YOUR_TEMPLATE&quot; folders in the &quot;1_Install_Files&quot; folders to match the name of your template folder.
+    <ul>
+      <li>1_Install_Files/includes/templates/YOUR_TEMPLATE/</li>
+    </ul></li>
+  <li>Upload the files from &quot;1_Install_Files&quot; to your store. (DO NOT upload the &quot;1_Install_Files&quot; folder, just the CONTENTS of this folder - <br /><small>copy ALL of the add-on files to your store!! Most issues are caused by store owners who decide to NOT load ALL of the module files</small>)</li>
+  <li>Download the latest GeoIP.dat file from <a href="http://www.maxmind.com/app/geolite">MaxMind</a> or direct download the zipped <a href="http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz">file</a>. This file is updated every month.</li>
+  <li>Unzip the file and FTP it to your store &quot;includes/GeoIP.dat&quot;</li>
+  <li>Once the files are uploaded, click ANY link in your store's admin, and  the auto-installer will be triggered. If you have followed the install  instructions, you will see the installation confirmation message.</li>
+<li>Optional: If you are still using <strong>Zen cart 1.3.x</strong> also also upload from the &quot;3_files_for_zen_cart_1.3.x&quot; folder:
+  <ul>
+        <li>YOUR_ADMIN/includes/boxes/extra_boxes/supertracker_reports_dhtml.php</li></ul>
+  </li>
+  <li>You are ready now to start configuring Super Tracker</li>
+</ol>
+</fieldset>
+<hr />
+<fieldset>
+<legend>Upgrade Instructions</legend>
+<p>If you are <b>upgrading</b> from <strong>ANY</strong> older version of Super Tracker (ALL PRIOR VERSIONS!!).</p>
+<ol>
+  <li>BACK UP your database &amp; store.</li>
+  <li>Unzip the Super Tracker package to your local hard drive, retaining the folder structure.</li>
+  <li>Rename the &quot;YOUR_ADMIN_FOLDER&quot; folder in the &quot;1_Install_Files&quot;
+  <ul>
+    <li>1_Install_Files/YOUR_ADMIN/</li>
+  </ul></li>
+  <li>Rename all of the &quot;YOUR_TEMPLATE&quot; folders in the &quot;1_Install_Files&quot; folders to match the name of your template folder.
+  <ul>
+    <li>1_Install_Files/includes/templates/YOUR_TEMPLATE/</li>
+  </ul></li>
+  <li>Upload the files from &quot;1_Install_Files&quot; to your store. (DO NOT upload the &quot;1_Install_Files&quot; folder, just the CONTENTS of this folder - <br />
+    <small>copy ALL of the add-on files to your store!! Most issues are caused by store owners who decide to NOT load ALL of the module files</small>)<br />
+    <strong>Overwrite all the older files from Super Tracker</strong>. </li>
+  <li>Download the latest GeoIP.dat file from <a href="http://www.maxmind.com/app/geolite">MaxMind</a> or direct download the zipped <a href="http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz">file</a>. This file is updated every month this installation contains the file generated on 8-8-2012</li>
+  <li>Unzip the file and FTP it to your store &quot;includes/GeoIP.dat&quot;</li>
+  <li>Once the files are uploaded, click ANY link in your store's admin, and  the auto-installer will be triggered to update your database. If you have followed the install  instructions, you will see the installation confirmation message.</li>
+  <li>If you are  using <strong>Zen cart 1.5.x</strong> delete:
+    <ul>
+      <li>YOUR_ADMIN/includes/boxes/extra_boxes/supertracker_reports_dhtml.php</li>
+    </ul>
+    This file is now obsolete</li>
+</ol>
+</fieldset>
+<hr />
+<fieldset>
+<legend>Un-Install Instructions</legend>
+<ol>
+  <li>BACK UP your database &amp; store.</li>
+  <li>Run the uninstall.sql from the &quot;Sql files&quot; folder</li>
+  <li>Delete the following from your current install:
+    <ul>
+      <li>YOUR_ADMIN/supertracker.php</li>
+      <li>YOUR_ADMIN/images/flags/ (complete directory)</li>
+      <li>YOUR_ADMIN/includes/searchengines.php</li>
+      <li>YOUR_ADMIN/includes/auto_loaders/config.supertracker.php</li>
+      <li>YOUR_ADMIN/includes/extra_datafiles/supertracker.php</li>
+      <li>YOUR_ADMIN/includes/functions/extra_functions/supertracker.php</li>
+      <li>YOUR_ADMIN/includes/init_includes/init_supertracker_config.php</li>
+      <li>YOUR_ADMIN/includes/installers/supertracker/ (complete directory)</li>
+      <li>YOUR_ADMIN/includes/languages/YOUR_LANGUAGE/supertracker.php</li>
+      <li>YOUR_ADMIN/includes/languages/YOUR_LANGUAGE/extra_definitions/supertracker.php</li>
+      <li>includes/GeoIP.dat</li>
+      <li>includes/geoip.inc</li>
+      <li>includes/classes/supertracker.php</li>
+      <li>includes/extra_datafiles/supertracker.php</li>
+      <li>includes/templates/YOUR_TEMPLATE/jscript/jscript_supertracker.php</li>
+      </ul></li>
+    <li>If you are still using <strong>Zen cart 1.3.x</strong> also delete:
+<ul>
+        <li>YOUR_ADMIN/includes/boxes/extra_boxes/supertracker_reports_dhtml.php</li></ul>
+    </li>
+</ol>
+</fieldset>
+
+</div>
+</div>
+</div>
+<!--End sc2-->
+
+<!--Begin sc3-->
+<div class="tabcontent" id="sc3" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+<h3>Configuration</h3>
+<ol>
+  <li>Go to Configuration =&gt; Super Tracker Configuration in the admin panel.
+   <ul>
+     <li>Enter a Comma Separate List of IP's which should not be recorded, for instance, your own PC's IP address, or that of your server if you are using Cron Jobs, etc</li>
+     <li>Enter a Comma Separate List of UserAgent's substring which should not be recorded</li>
+     <li>Choose to exclude, or include the recording of bots</li>
+   </ul></li>
+  <li>That's, all enjoy</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!--End sc3-->
+
+<!--Begin sc4-->
+<div class="tabcontent" id="sc4" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h3>Usage</h3>
+<fieldset>
+<legend>Reports</legend>
+<p>You can view the reports Super Tracker is generating via <strong>Admin =&gt; Reports Super Tracker</strong></p>
+<p>Super Tracker<sup></sup> generates the following reports:</p>
+
+<ul>
+  <li>Top Referrers</li>
+  <li>Top Sales Generating Referrers</li>
+  <li>Visitors Countries Stats</li>
+  <li>Search Keywords Used - Total</li>
+  <li>Search Keywords Used in last 24h</li>
+  <li>Search Keywords Used in last 3 Days</li>
+  <li>Search Keywords Used in last Week</li>
+  <li>Search Keywords Used in last Month</li>
+  <li>Top Exit Pages (No Sale)</li>
+  <li>Top Exit Pages (No Sale, but added to cart)</li>
+  <li>Average Clicks on Site by Referrer</li>
+  <li>Average Time Spent on Site by Referrer</li>
+  <li>Products Viewed Report</li>
+  <li>Last Ten Visitors</li>
+</ul>
+<p>Click on an item form the drop-down and view the report.</p>
+<p>If you think there are to many records kept in the database you can erase the oldest ones. But keep in mind this will also influence the generated reports, since the deleted records information is no longer available.</p>
+</fieldset>
+</div>
+</div>
+</div>
+<!--End sc4-->
+
+<!--Begin sc5-->
+<div class="tabcontent" id="sc5" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+<h3>Credits &amp; History</h3>
+  <ul>
+    <li>Mark Stephens - mark@phpworks.co.uk - http://phpworks.co.uk</li>
+    <li>Ported to Zen-Cart by Andrew Berezin - andrew@ecommerce-service.com - http://ecommerce-service.com</li>
+    <li>Readme updated by several folks. Thanks!</li>
+  </ul>
+
+<p>Super Tracker v1.1 modifications by:</p>
+<ul>
+<li>Design75 (info@zen4all.nl / http:www.zen4all.nl)</li>
+</ul>
+<fieldset>
+  <legend>Super Tracker v1.1 Change log</legend>
+  <ul>
+    <li>added sql statements for Zen Cart 1.5</li>
+    <li>updated includes/geoip.inc to a new version new countries were added, some removed, and some changed</li>
+    <li>added the country flags images to the installation in YOUR_ADMIN/images/flags</li>
+    <li>In YOUR_ADMIN/supertracker.php changed http://www.showmyip.com to whatismyipaddress.com, thanks to saucy-but-nice see <a href="http://www.zen-cart.com/showthread.php?191762-Supertracker-for-1-5-0-yet&amp;p=1127215#post1127215">forum post</a></li>
+    <li>added files for the auto installer for sql</li>
+    <li>added a version number in the admin panel for easier tracking of the module version</li>
+    <li>updated the readme</li>
+  </ul>
+</fieldset>
+<fieldset>
+  <legend>Super Tracker v1.0.0 Change log</legend>
+  <p>05.09.2007 - a_berezin</p>
+  <ul>
+    <li>Initial version based on Ported v 3.20b 01.11.2005</li>
+    <li>Code optimization</li>
+    <li>Updated readme for Zen Cart (08.04.07)</li>
+  </ul>
+</fieldset>
+</div>
+</div>
+</div>
+<!--End sc5-->
+
+<!--Begin sc6-->
+<div class="tabcontent" id="sc6" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h3>Troubleshooting</h3>
+<fieldset>
+<legend>Basics</legend>
+<p>Make sure your custom template is active. (Admin &gt; Tools &gt; Template Selection)</p>
+<p>Make sure Super Tracker is installed. <strong>Admin =&gt; Configuration =&gt; Super Tracker Configuration</strong></p>
+<p>If Super Tracker<sup></sup> does not work or gives you errors:</p>
+
+<ul>
+  <li>Make sure all files are in correct location</li>
+  <li>Make sure you uploaded ALL the Super Tracker files</li>
+  <li>Make sure the files are not corrupt from bad FTP transfers</li>
+  <li>MAKE SURE YOU RE-READ THE CONFIGURATION AND USAGE SECTIONS!!!</li>
+</ul>
+</fieldset>
+</div>
+</div>
+</div>
+<!--End sc6-->
+
+<!--Begin sc7-->
+<div class="tabcontent" id="sc7" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h3>Files</h3>
+<p>Super Tracker makes no modifications to core Zen Cart files</p>
+
+</div>
+</div>
+</div>
+<!--End sc7-->
+
+
+<!--Begin sc8-->
+<div class="tabcontent" id="sc8" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h3>MISC</h3>
+<p> this is empty for now</p>
+</div>
+</div>
+</div>
+<!--End sc8-->
+
+<!--Begin sc9-->
+<div class="tabcontent" id="sc9" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h3>LICENSE</h3>
+<p><strong>Super Tracker</strong> is released under the General Public License (see LICENSE.txt)</p>
+
+<p>This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+<p>Always backup your shop and database before making changes.</p>
+
+</div>
+</div>
+</div>
+<!--End sc9-->
+</div>
+
+<!--end tabcontainer-->
+<script type="text/javascript">document.getElementById('sc2').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc3').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc4').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc5').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc6').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc7').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc8').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc9').style.display = 'none';</script>
+<script type="text/javascript">ShowTabs()</script>
+<script type="text/javascript">
+// We only show the tab links if JavaScript is available/active.
+<!--
+if (document.getElementById("slidetabsmenu") != null) {
+  document.getElementById('slidetabsmenu').style.display = "block";
+}
+//-->
+</script>
+</div>
+</body>
+</html>
