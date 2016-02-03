@@ -86,10 +86,11 @@ if ($action == 'del_rows') {
                 <div class="supertracker_contact">
                   <strong><?php echo TEXT_DATABASE_INFO; ?></strong>
                   <?php
-                  $maint_result = $db->Execute("SELECT tracking_id, time_arrived
-                                                FROM " . TABLE_SUPERTRACKER . "
-                                                ORDER BY tracking_id ASC");
-                  echo '<span class="supertracker_text">' . sprintf(TEXT_TABLE_DATABASE, $maint_result->RecordCount(), zen_date_short($maint_result->fields['time_arrived'])) . '</span><br />';
+                  $maint_query = "SELECT tracking_id, time_arrived
+                                  FROM " . TABLE_SUPERTRACKER . "
+                                  ORDER BY tracking_id ASC";
+                  $maint = $db->Execute($maint_query);
+                  echo '<span class="supertracker_text">' . sprintf(TEXT_TABLE_DATABASE, $maint->RecordCount(), zen_date_short($maint->fields['time_arrived'])) . '</span><br />';
                   echo zen_draw_form('del_rows', FILENAME_SUPERTRACKER, 'action=del_rows', 'post') . zen_hide_session_id() . TEXT_TABLE_DELETE . ' ' . '<input name="num_rows" size=10><input type="submit" value="' . TEXT_BUTTON_GO . '"></form>';
                   ?>
                 </div>

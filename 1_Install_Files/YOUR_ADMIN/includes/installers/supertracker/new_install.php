@@ -28,6 +28,8 @@ $db->Execute("CREATE TABLE IF NOT EXISTS " . TABLE_SUPERTRACKER . " (
   browser_string varchar(255) NOT NULL DEFAULT '',
   country_code char(2) NOT NULL DEFAULT '',
   country_name varchar(100) NOT NULL DEFAULT '',
+  country_region varchar(100) NOT NULL DEFAULT '',
+  country_city varchar(100) NOT NULL DEFAULT '',
   customer_id int(11) NOT NULL DEFAULT '0',
   order_id int(11) NOT NULL DEFAULT '0',
   referrer varchar(255) NOT NULL DEFAULT '',
