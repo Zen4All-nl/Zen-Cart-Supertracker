@@ -11,6 +11,5 @@
  * @version $Id: jscript_supertracker.php, v 1.0.0 09.05.2007 17:40 Andrew Berezin andrew@ecommerce-service.com $
  */
   require(DIR_WS_CLASSES . 'supertracker.php');
-	$supertracker = new supertracker;
-	$supertracker->update();
-?>
+  $supertracker = new supertracker;
+  $supertracker->update();
