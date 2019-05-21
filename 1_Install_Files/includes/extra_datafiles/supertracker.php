@@ -11,4 +11,3 @@
  * @version $Id: supertracker.php, v 1.0.0 09.05.2007 17:40 Andrew Berezin andrew@ecommerce-service.com $
  */
 define('TABLE_SUPERTRACKER', DB_PREFIX . 'supertracker');
-?>
