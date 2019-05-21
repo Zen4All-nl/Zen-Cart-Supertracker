@@ -3,7 +3,7 @@
  * @package supertracker
  * @copyright Copyright 2003-2006 Zen Cart Development Team
  * @developer Created by Mark Stephens, http://www.phpworks.co.uk
- * @developer Added keywords filters by Monika Mathé, http://www.monikamathe.com
+ * @developer Added keywords filters by Monika Mathï¿½, http://www.monikamathe.com
  * @developer Added keywords processing by Andrew Berezin, http://eCommerce-Service.com
  * @developer Ported to Zen-Cart by Andrew Berezin, http://eCommerce-Service.com
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0

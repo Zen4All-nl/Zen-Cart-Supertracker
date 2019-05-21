@@ -205,7 +205,7 @@ class supertracker {
         }
 
         if(is_file(DIR_WS_INCLUDES . "GeoLiteCity.dat")) {
-          include_once(DIR_WS_INCLUDES . "geoipcity.inc");
+          include(DIR_WS_INCLUDES . "geoipcity.inc");
           $gi = geoip_open(DIR_WS_INCLUDES . "GeoLiteCity.dat", GEOIP_STANDARD);
           $record = geoip_record_by_addr($gi, $_SERVER['REMOTE_ADDR']);
           $country_name = $record->country_name;

@@ -10,6 +10,6 @@
  * @version Based $Id: supertracker.php v 3.20b 21 Mar 2006 Mark Stephens $
  * @version $Id: supertracker.php, v 1.0.0 09.05.2007 17:40 Andrew Berezin andrew@ecommerce-service.com $
  */
- define('BOX_CONFIGURATION_SUPERTRACKER', 'SuperTracker');
- define('BOX_REPORTS_SUPERTRACKER', 'SuperTracker');
+define('BOX_CONFIGURATION_SUPERTRACKER','Super Tracker Configuration');
+define('BOX_REPORTS_SUPERTRACKER', 'SuperTracker');
 ?>
